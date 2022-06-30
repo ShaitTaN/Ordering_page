@@ -3,9 +3,9 @@
 	margin: 0 auto;
 }
 
-.main-title{
-	font-size: 35px;
-	margin: 50px 50px 20px;
+.wrapper{
+	display: flex;
+	flex-direction: column;
 }
 
 .title{
@@ -15,4 +15,13 @@
 .change-btn{
 	color: #065CC2;
 	cursor: pointer;
+}
+
+.main{
+	flex-grow: 1;
+}
+
+.main-title{
+	font-size: 35px;
+	margin: 50px 50px 20px;
 }

@@ -1,0 +1,26 @@
+.footer{
+	background-color: #F8F8F8;
+	border-top: 1px solid #F8F8F8;
+	padding: 20px 0;
+	.container{
+		padding: 0 50px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__btn{
+		color: #fff;
+		font-size: 29px;
+		padding: 21px 50px;
+		background-color: #EC0002;
+		box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12)
+	}
+	&__summ{
+		display: flex;
+		align-items: center;
+		span{
+			font-size: 35px;
+			margin-left: 50px;
+		}
+	}
+}

@@ -1,5 +1,7 @@
 .delivery{
-	max-width: 1000px;
+	max-width: 1200px;
+	padding: 50px 82px 50px 50px;
+	border-right: 1px solid #8C8C8C;
 	&__header{
 		display: flex;
 		justify-content: space-between;
@@ -95,9 +97,68 @@
 	}
 	&__client{
 		margin-top: 30px;
+		&-controlls{
+			display: flex;
+			gap: 20px;
+		}
 		h2{
 			font-size: 29px;
 			margin-bottom: 15px;
+		}
+		.select{
+			appearance: none;
+			background-color: transparent;
+			background-image: url('../../assets/icons/d-arrow.svg');
+			background-repeat: no-repeat;
+			background-position: calc(100% - 20px) center;
+			cursor: pointer;
+			border: 1px solid #D6D6D6;
+			border-radius: 4px;
+			font-size: 22px;
+			padding: 34px 48px 14px 14px;
+			margin-bottom: 15px;
+		}
+		&-name{
+			position: relative;
+			&::before{
+				content: 'Имя и фамилия';
+				display: block;
+				position: absolute;
+				top: 8px;
+				left: 18px;
+				font-size: 17px;
+			}
+		}
+		&-number{
+			position: relative;
+			&::before{
+				content: 'Контактный телефон';
+				display: block;
+				position: absolute;
+				top: 8px;
+				left: 18px;
+				font-size: 17px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1680px){
+	.delivery{
+		font-size: 18px;
+		padding: 50px 50px 50px 50px;
+			&__header{
+			h2{
+				font-size: 24px;
+			}
+		}
+		&__card{
+			width: 440px;
+		}
+		&__client{
+			.select{
+				font-size: 18px;
+			}
 		}
 	}
 }

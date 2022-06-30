@@ -5,13 +5,15 @@ import Ordering from "./components/odering/Ordering";
 
 function App() {
   return (
-    <>
-      <div className="container">
-        <h1 className="main-title title">Оформление заказа</h1>
-        <Ordering/>
+    <div className="wrapper">
+      <div className="main">
+        <div className="container">
+          <h1 className="main-title title">Оформление заказа</h1>
+          <Ordering />
+        </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

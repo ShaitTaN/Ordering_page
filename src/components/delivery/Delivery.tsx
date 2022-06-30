@@ -41,20 +41,22 @@ const Delivery: FC = () => {
       </div>
       <div className="delivery__client">
         <h2 className="title">Получатель</h2>
-        <select
-          name="select-name"
-          id=""
-          className="delivery__client-name"
-        >
-					<option value="1">Вольфганг Вениаминович Константинопольский</option>
-				</select>
-        <select
-          name="select-number"
-          id=""
-          className="delivery__client-number"
-        >
-					<option value="1">+7 910 234-56-78</option>
-				</select>
+        <div className="delivery__client-controlls">
+          <div className="delivery__client-name">
+            <select name="select-name" id="" className="select">
+              <option value="1">
+                Вольфганг Вениаминович Константинопольский
+              </option>
+            </select>
+            <div className="change-btn">Новый получатель</div>
+          </div>
+          <div className="delivery__client-number">
+            <select name="select-number" id="" className="select">
+              <option value="1">+7 910 234-56-78</option>
+            </select>
+            <div className="change-btn">Новый телефон</div>
+          </div>
+        </div>
       </div>
     </div>
   );
