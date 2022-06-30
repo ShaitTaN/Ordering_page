@@ -1,0 +1,25 @@
+.custom-checkbox{
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+
+	input{
+		position: absolute;
+		opacity: 0;
+
+		&:checked ~ span{
+			background-color: #065CC2;
+		}
+	}
+	span{
+		display: block;
+		height: 24px;
+		width: 24px;
+		background-color: #c1d6f0;
+		background-image: url('../../assets/icons/checkbox.svg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		margin-right: 10px;
+	}
+}
