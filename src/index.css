@@ -1,13 +1,42 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	background: #F2F2F2;
+	color: #333333;
+	font-family: 'PTRootUIWebRegular', sans-serif;
+}
+
+@font-face {
+	font-family: 'PTRootUIWebBold';
+	src:
+		url('./fonts/PT-Root-UI_Bold.woff2') format('woff2'),
+		url('./fonts/PT-Root-UI_Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PTRootUIWebMedium';
+	src:
+		url('./fonts/PT-Root-UI_Medium.woff2') format('woff2'),
+		url('./fonts/PT-Root-UI_Medium.woff') format('woff');
+	font-weight: medium;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PTRootUIWebRegular';
+	src:
+		url('./fonts/PT-Root-UI_Regular.woff2') format('woff2'),
+		url('./fonts/PT-Root-UI_Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
