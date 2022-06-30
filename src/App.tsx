@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.scss";
-import Delivery from "./components/delivery/Delivery";
 import Footer from "./components/footer/Footer";
-import Order from "./components/order/Order";
+import Ordering from "./components/odering/Ordering";
 
 function App() {
   return (
     <>
-			<h1 className="main-title">Оформление заказа</h1>
-			<Delivery/>
-			<Order/>
-			<Footer/>
+      <div className="container">
+        <h1 className="main-title title">Оформление заказа</h1>
+        <Ordering/>
+      </div>
+      <Footer />
     </>
   );
 }
