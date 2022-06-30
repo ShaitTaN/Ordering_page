@@ -52,6 +52,7 @@
 	}
 	&__dates{
 		margin-top: 30px;
+		margin-bottom: 15px;
 		display: flex;
 		align-items: center;
 		gap: 20px;
@@ -61,5 +62,35 @@
 		padding: 20px;
 		border: 1px solid #D6D6D6;
 		border-radius: 4px;
+	}
+	&__checkboxes{
+		display: flex;
+		gap: 15px;
+		flex-direction: column;
+	}
+	&__checkbox{
+		position: relative;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		input{
+			position: absolute;
+			opacity: 0;
+
+			&:checked ~ span{
+				background-color: #065CC2;
+			}
+		}
+		span{
+			display: block;
+			height: 24px;
+			width: 24px;
+			background-color: #c1d6f0;
+			background-image: url('../../assets/icons/checkbox.svg');
+			background-repeat: no-repeat;
+			background-position: center center;
+			margin-right: 10px;
+		}
 	}
 }

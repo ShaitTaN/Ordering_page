@@ -23,6 +23,18 @@ const Delivery: FC = () => {
         <DeliveryDateItem />
         <div className="change-btn">Другие дата и время</div>
       </div>
+      <div className="delivery__checkboxes">
+        <label className="delivery__checkbox">
+          <input type="checkbox"/>
+          <span></span>
+          Viber/СМС уведомления о статусе заказа
+        </label>
+        <label className="delivery__checkbox">
+          <input type="checkbox"/>
+          <span></span>
+          Оставить у двери (бесконтактная доставка)
+        </label>
+      </div>
     </div>
   );
 };
