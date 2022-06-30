@@ -24,3 +24,30 @@
 		}
 	}
 }
+
+@media (max-width: 1680px){
+	.footer{
+		&__btn{
+			font-size: 25px;
+		}
+		&__summ{
+			span{
+				font-size: 30px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1366px){
+	.footer{
+		&__btn{
+			font-size: 22px;
+		}
+		&__summ{
+			font-size: 20px;
+			span{
+				font-size: 25px;
+			}
+		}
+	}
+}

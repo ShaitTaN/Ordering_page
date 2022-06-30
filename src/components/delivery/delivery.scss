@@ -58,6 +58,11 @@
 		display: flex;
 		align-items: center;
 		gap: 20px;
+
+		&-items{
+			display: flex;
+			gap: 20px;
+		}
 	}
 	&__date{
 		width: 280px;
@@ -146,7 +151,7 @@
 @media (max-width: 1680px){
 	.delivery{
 		font-size: 18px;
-		padding: 50px 50px 50px 50px;
+		padding: 50px;
 			&__header{
 			h2{
 				font-size: 24px;
@@ -158,6 +163,50 @@
 		&__client{
 			.select{
 				font-size: 18px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1366px){
+	.delivery{
+		font-size: 16px;
+		padding: 45px;
+			&__header{
+			h2{
+				font-size: 20px;
+			}
+		}
+		&__card{
+			width: 400px;
+		}
+		&__client{
+			.select{
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1280px){
+	.delivery{
+		&__header{
+			width: 400px;
+		}
+		&__cards{
+			flex-direction: column;
+			width: 400px;
+		}
+		&__dates{
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		&__date{
+			width: 220px;
+		}
+		&__client{
+			&-controlls{
+				flex-direction: column;
 			}
 		}
 	}

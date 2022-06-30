@@ -23,8 +23,10 @@ const Delivery: FC = () => {
       </div>
       <div className="change-btn">Выбрать новое место и способ</div>
       <div className="delivery__dates">
-        <DeliveryDateItem />
-        <DeliveryDateItem />
+        <div className="delivery__dates-items">
+          <DeliveryDateItem />
+          <DeliveryDateItem />
+        </div>
         <div className="change-btn">Другие дата и время</div>
       </div>
       <div className="delivery__checkboxes">
