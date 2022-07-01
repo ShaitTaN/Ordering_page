@@ -6,7 +6,11 @@ import DeliveryCard from "./DeliveryCard";
 import DeliveryClient from "./DeliveryClient";
 import DeliveryDateItem from "./DeliveryDateItem";
 
-const Delivery: FC = () => {
+interface DeliveryProps{
+	openModal: () => void;
+}
+
+const Delivery: FC<DeliveryProps> = ({openModal}) => {
   const [checked1, setChecked1] = useState(true);
   const [checked2, setChecked2] = useState(false);
 

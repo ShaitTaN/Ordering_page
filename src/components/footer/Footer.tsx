@@ -1,16 +1,18 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import { useMatchMedia } from "../../assets/hooks/useMatchMedia";
+import { Context } from "../../context";
 import "./footer.scss";
 
 const Footer: FC = () => {
   const { isMobile } = useMatchMedia();
+	const {openModal} = useContext(Context)
 
   if (isMobile) {
     return (
       <footer className="footer">
         <div className="container">
           <div className="footer__summ title">
-            К оплате: 21 072 ₽<div className="change-btn">Подробнее</div>
+            К оплате: 21 072 ₽<div className="change-btn" onClick={openModal}>Подробнее</div>
           </div>
           <button className="footer__btn">Оформить и оплатить</button>
         </div>
