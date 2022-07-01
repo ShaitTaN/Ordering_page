@@ -8,7 +8,7 @@ import './ordering.scss'
 const Ordering: FC = () => {
 	const {isMobile} = useMatchMedia()
 	const {openModal, closeModal, isVisible} = useContext(Context)
-	
+
 	return (
 		<div className='ordering'>
 			<Delivery openModal={() => openModal()}/>

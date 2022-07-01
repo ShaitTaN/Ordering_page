@@ -1,3 +1,10 @@
-import { createContext } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 
-export const Context = createContext({} as any);
+interface IContext{
+	closeModal: () => void;
+	openModal: () => void;
+	isVisible: boolean;
+	setIsVisible: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Context = createContext({} as IContext);
