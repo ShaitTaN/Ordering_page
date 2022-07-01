@@ -15,6 +15,12 @@
 .change-btn{
 	color: #065CC2;
 	cursor: pointer;
+	&:hover{
+		text-decoration: underline;
+	}
+	&:active{
+		text-decoration: underline;
+	}
 }
 
 .main{

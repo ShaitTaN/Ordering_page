@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import { useMatchMedia } from "../../assets/hooks/useMatchMedia";
 import CustomCheckbox from "../checkbox/CustomCheckbox";
 import "./delivery.scss";
@@ -6,15 +6,26 @@ import DeliveryCard from "./DeliveryCard";
 import DeliveryClient from "./DeliveryClient";
 import DeliveryDateItem from "./DeliveryDateItem";
 
-interface DeliveryProps{
-	openModal: () => void;
+interface DeliveryProps {
+  openModal: () => void;
 }
 
-const Delivery: FC<DeliveryProps> = ({openModal}) => {
+const Delivery: FC<DeliveryProps> = ({ openModal }) => {
   const [checked1, setChecked1] = useState(true);
   const [checked2, setChecked2] = useState(false);
-
+  const [activeCard, setActiveCard] = useState(0);
+  const [activeData, setActiveData] = useState(0);
+	const [isLeftDisabled, setIsLeftDisabled] = useState(true)
+	const [isRightDisabled, setIsRightDisabled] = useState(false)
   const { isMobile } = useMatchMedia();
+
+  const changeCard = (index: number) => {
+    setActiveCard(index);
+  };
+
+  const changeDataItem = (index: number) => {
+    setActiveData(index);
+  };
 
   const deliveryCards = [
     {
@@ -46,15 +57,43 @@ const Delivery: FC<DeliveryProps> = ({openModal}) => {
         <h2 className="title">Доставка</h2>
         {!isMobile && (
           <div className="delivery__controlls">
-            <button className="delivery__controlls-btn"></button>
-            <button className="delivery__controlls-btn"></button>
+            <button disabled={isLeftDisabled} className="delivery__controlls-btn">
+              <svg
+                width="14"
+                height="22"
+                viewBox="0 0 14 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.04634 11L13.2963 19.25L10.9397 21.6066L0.333008 11L10.9397 0.393311L13.2963 2.74998L5.04634 11Z"
+                  fill={!isLeftDisabled ? `#333333` : '#D6D6D6'}
+                />
+              </svg>
+            </button>
+            <button disabled={isRightDisabled} className="delivery__controlls-btn">
+              <svg
+                width="14"
+                height="22"
+                viewBox="0 0 14 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.58354 11L0.333544 19.25L2.69021 21.6066L13.2969 11L2.69021 0.393311L0.333544 2.74998L8.58354 11Z"
+                  fill={!isRightDisabled ? `#333333` : '#D6D6D6'}
+                />
+              </svg>
+            </button>
           </div>
         )}
       </div>
       <div className="delivery__cards">
         <div className="delivery__cards-wrapper">
-          {deliveryCards.map((card) => (
+          {deliveryCards.map((card, i) => (
             <DeliveryCard
+              changeCard={() => changeCard(i)}
+              isActive={i === activeCard}
               title={card.title}
               address={card.address}
               price={card.price}
@@ -67,7 +106,13 @@ const Delivery: FC<DeliveryProps> = ({openModal}) => {
       <div className="delivery__dates">
         <div className="delivery__dates-items">
           {deliveryDates.map((date, i) => (
-            <DeliveryDateItem title={date.title} time={date.time} key={i} />
+            <DeliveryDateItem
+              title={date.title}
+              time={date.time}
+              key={i}
+              isActive={i === activeData}
+              changeDataItem={() => changeDataItem(i)}
+            />
           ))}
         </div>
         <div className="change-btn">Другие дата и время</div>
