@@ -1,10 +1,15 @@
 import React, { FC } from "react";
 
-const DeliveryDateItem: FC = () => {
+interface DeliveryDateItemProps{
+	title: string;
+	time: string;
+}
+
+const DeliveryDateItem: FC<DeliveryDateItemProps> = ({time,title}) => {
   return (
     <div className="delivery__date">
-      <div className="title">пн, 24 сен — ср, 26 сен</div>
-      <div className="delivery__date-time">10:00–19:00</div>
+      <div className="title">{title}</div>
+      <div className="delivery__date-time">{time}</div>
     </div>
   );
 };
